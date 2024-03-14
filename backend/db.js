@@ -15,7 +15,7 @@ mongoose.connect("mongodb+srv://bookbazaar:priyans4475@cluster0.fvrepdx.mongodb.
 // lastname:String
 // })
 
-const books=mongoose.Schema({
+const booksSchema= new mongoose.Schema({
    
     bookTitle:{
         type:String,
@@ -47,7 +47,29 @@ const books=mongoose.Schema({
     
 })
 
-const Books=mongoose.model('Books',books)
+// const authorSchema= new mongoose.Schema({
+    
+//     authorName:{
+//         type:String,
+//         require:true
+
+//     },
+//     authorimage:{
+//         type:String,
+//         require:true
+//     },
+//    authorlink:{
+//     type:String,
+//     require:true
+//    }
+
+
+
+    
+// })
+const Books = mongoose.model('Books', booksSchema);
+// const Author = mongoose.model('Author', authorSchema);
 
 // const User=mongoose.model("User",userSchema);
 module.exports={Books}
+

@@ -1,13 +1,22 @@
 import React from 'react'
 import Banner from './Banner'
 import FavBooks from './FavBooks'
+import FavBookorg from '../FavBookorg'
+import Promobanner from '../Promobanner'
+import Other from '../Other'
+import AuthorFt from '../Authorft'
 
 const Home = () => {
   return (
-    <div>
+    <div className='container mx-auto max-w-screen-full'>
 
       <Banner/>
       <FavBooks/>
+      <FavBookorg/>
+      <Promobanner/>
+      <Other/>
+      <AuthorFt/>
+      
       
     </div>
     

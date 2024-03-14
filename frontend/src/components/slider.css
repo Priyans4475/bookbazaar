@@ -1,5 +1,5 @@
 
-.swipers {
+.swiper {
     width: 240px;
     height: 320px;
   }
@@ -12,7 +12,6 @@
     font-size: 22px;
     font-weight: bold;
     color: #fff;
-    z-index: 0;
   }
   
   .swiper-slide:nth-child(1n) {
@@ -50,6 +49,4 @@
   .swiper-slide:nth-child(9n) {
     background-image: url('src/assets/banner-books/book2.png');
   }
-  
-  
   

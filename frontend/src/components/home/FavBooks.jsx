@@ -16,18 +16,28 @@ const FavBooks = () => {
         getdata();
     },[])
   return (
-    <div className=''>
-        <div className='text-2xl font-bold mb-3 text-blue-700 justify-start items-start flex'>Your favourite Books</div>
-        <div className='text-4xl font-bold mb-3 text-blue-700 justify-center items-center flex'>International Best Sellers Books</div>
-        <div className='flex flex-no-wrap overflow-x-auto'>
-           
-    {Array.isArray(books) && books.map((book, index) => (
+    <div className='z-index:1'>
+        <div className='text-4xl font-bold mb-5 text-blue-700 justify-center items-center flex mt-2 '>International Best Sellers Books</div>
+        
+        <div class="w-full overflow-x-auto ">
+  <div class="w-full inline-flex flex-nowrap">
+    <ul class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none">
+      {Array.isArray(books) && books.map((book, index) => (
         <Favcard 
-           book={book}
-         
+          book={book}
         />
-    ))}
+      ))}
+    </ul>   
+    <ul class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none">
+      {Array.isArray(books) && books.map((book, index) => (
+        <Favcard 
+          book={book}
+        />
+      ))}
+    </ul>   
+  </div>
 </div>
+
 
         
         

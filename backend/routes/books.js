@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { Books } = require('../db'); // Importing the Books model
+const { Books} = require('../db'); // Importing the Books model
+const { Author } = require('../authormodel');
 
 router.post('/', async function(req, res) {
     const data = req.body;
@@ -99,5 +100,9 @@ router.get('/', async function(req, res) {
         res.status(500).json({ error: 'An error occurred while retrieving data from the database.' });
     }
 });
+
+
+
+
 
 module.exports = router;
