@@ -8,7 +8,7 @@ import AuthorFt from '../Authorft'
 
 const Home = () => {
   return (
-    <div className='container mx-auto max-w-screen-full'>
+    <div className=' '>
 
       <Banner/>
       <FavBooks/>
