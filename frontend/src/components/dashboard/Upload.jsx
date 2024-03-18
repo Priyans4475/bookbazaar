@@ -1,6 +1,19 @@
 import React,{useState} from 'react'
-
+import axios from 'axios'
+import { useNavigate } from "react-router-dom";
 const Upload = () => {
+  const navigate = useNavigate();
+  // const [UpldBook, setUpldBook] = useState(
+  //   {
+  //     BookTitle:'',
+  //     BookAuthor:'',
+  //     imageurl:'',
+  //     Description:'',
+  //     // category:'',
+  //     Booklink:''
+     
+  //   }
+  // );
 
   const categories=
     ["Fiction",
@@ -20,23 +33,127 @@ const Upload = () => {
   const [category,setcategory]=useState(categories[0])
 
   
+const  handlesubmit = (e) => {
+  e.preventDefault();
+  // const formData = new FormData();
+ 
+  // // formData.append('BookTitle', UpldBook.BookTitle);
+  // // formData.append('BookAuthor',UpldBook.BookAuthor);
+  // // formData.append('imageurl',UpldBook.imageurl);
+  // // formData.append('Description',UpldBook.Description);
+  // // formData.append('Booklink',UpldBook.Booklink);
+  // // formData.append('category',category);
+
+  // // console.log(formData);
+ 
+
+   const form=e.target;
+   
+   const bookTitle =form.bookTitle.value;
+   const authorName =form.bookAuthor.value;
+   const imageURL =form.imageurl.value;
+   const description =form.description.value;
+   const bookpdfURL =form.booklink.value;
+   const category =form.category.value;
+
+   const bookobject ={
+    bookTitle,authorName,bookpdfURL,description,imageURL,category
+   }
+
+   console.log(bookobject);
+
+//    axios.post('http://localhost:3000/api/books', bookobject, {
+//     headers: {'Content-Type': 'application/json'}
+// })
+// .then(res => {
+//     console.log(res);
+//     alert('Successfully uploaded book');
+//     // navigate("/admin/dashboard/manage"); 
+// })
+// .catch(err => {
+//     consol
+
+fetch('http://localhost:3000/api/books', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(bookobject)
+})
+.then(response => {
+  if (response.ok) {
+    return response.json();
+  }
+  throw new Error('Network response was not ok.');
+})
+.then(data => {
+  console.log(data);
+  alert('Successfully uploaded book');
+  // navigate("/admin/dashboard/manage"); 
+})
+.catch(error => {
+  console.error('There was a problem with your fetch operation:', error);
+});
+
+
+
+}
+
+
+
+  // const handleChange = (e) => {
+
+  //   // setUpldBook({
+  //   //   ...UpldBook,
+  //   //   [e.target.BookTitle]: e.target.value,
+  //   //   [e.target.BookAuthor]: e.target.value,
+  //   //   [e.target.imageurl]: e.target.value,
+  //   //   [e.target.Description]: e.target.value,
+  //   //   [e.target.Booklink]: e.target.value,
+     
+  //   // });
+  //   const { name, value } = e.target;
+  //   setUpldBook({
+  //     ...UpldBook,
+  //     [name]: value,
+  //   });
+  
+  // }
+   
+
+
   return (
     <div className='px-4 my-12'>
          
           <h1 className='mb-8 text-3xl font-bold'>Upload Your Book</h1>
-          <form className="flex lg:w-[1180px] flex-col flex-wrap gap-4">
+    <form className="flex lg:w-[1180px] flex-col flex-wrap gap-4" onSubmit={handlesubmit}>
             <div className='flex'>
             <div className='lg:w-1/2'>
        
        <h1 className='font-bold text-xl'>Book Title</h1>
-       <input id="email1" type="text" placeholder="Book name" required  className='border-2 border-teal-400 rounded-md px-4 py-2 w-full' />
+       <input
+        name='bookTitle'
+         type="text" 
+         placeholder="Book name" 
+         required 
+        //  value={UpldBook.BookTitle}
+        //  onChange={handleChange}
+          className='border-2 border-teal-400 rounded-md px-4 py-2 w-full' 
+          />
         
       
          </div>
          <div className='lg:w-1/2'>
        
        <h1 className='font-bold text-xl'>Book Author</h1>
-       <input id="email1" type="text" placeholder="Book Author" required  className='border-2 border-teal-400 rounded-md px-4 py-2 w-full' />
+       <input 
+       name='bookAuthor'
+       type="text"
+        placeholder="Book Author"
+         required 
+        // value={UpldBook.BookAuthor} 
+        //  onChange={handleChange}
+         className='border-2 border-teal-400 rounded-md px-4 py-2 w-full' />
         
       
          </div>
@@ -45,14 +162,24 @@ const Upload = () => {
             <div className='lg:w-1/2'>
        
        <h1 className='font-bold text-xl'>Imageurl</h1>
-       <input id="email1" type="text" placeholder="Imageurl" required  className='border-2 border-teal-400 rounded-md px-4 py-2 w-full' />
+       <input 
+       name='imageurl'
+        type="text"
+        placeholder="imageurl" 
+        required 
+        // value={UpldBook.imageurl}
+        // onChange={handleChange}
+         className='border-2 border-teal-400 rounded-md px-4 py-2 w-full' />
         
       
          </div>
          <div className='lg:w-1/2'>
        
        <h1 className='font-bold text-xl'>Categories</h1>
-          <select className='border-2 border-teal-400 rounded-md px-4 py-2 w-full' onChange={(e)=>{setcategory(e.target.value)}}>
+          <select 
+          name='category'
+          className='border-2 border-teal-400 rounded-md px-4 py-2 w-full' 
+           onChange={(e)=>{setcategory(e.target.value)}}>
             {categories.map(cat=>{
               return <option value={cat}>{cat}</option>
             })}
@@ -64,14 +191,25 @@ const Upload = () => {
        
        <h1 className='font-bold text-xl'>Description</h1>
       
-       <textarea type="text"  placeholder="Write Book description here............" required  name="Text1" cols="40" rows="5" className='border-2 border-teal-400 rounded-md px-4 py-2 w-full '></textarea>
+       <textarea type="text" 
+        placeholder="Write Book description here............"
+         required 
+        //  value={UpldBook.Description} 
+        //  onChange={handleChange}
+         name="description" cols="40" rows="5" className='border-2 border-teal-400 rounded-md px-4 py-2 w-full '></textarea>
       
          </div>
 
          <div className=''>
        
        <h1 className='font-bold text-xl'>Book pdf link</h1>
-       <input id="email1" type="text" placeholder="Book pdf link" required  className='border-2 border-teal-400 rounded-md px-4 py-2 w-full' />
+       <input 
+       name='booklink'
+       type="text" placeholder="Book pdf link"
+        // required
+        //  value={UpldBook.Booklink} 
+        // onChange={handleChange}
+        className='border-2 border-teal-400 rounded-md px-4 py-2 w-full' />
         
       
          </div>
