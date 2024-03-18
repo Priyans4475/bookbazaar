@@ -31,7 +31,7 @@ const Manage = () => {
               </a>
             </Table.Cell>
           </Table.Row>
-          <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+          <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-700">
           <Table.Cell>2</Table.Cell>
             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
               Microsoft Surface Pro
