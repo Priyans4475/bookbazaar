@@ -11,7 +11,7 @@ const SideBar = () => {
       </Sidebar.Logo>
       <Sidebar.Items>
         <Sidebar.ItemGroup className='py-14 '>
-          <Sidebar.Item href="/admin/dashboard" icon={HiChartPie} className='m-5 text-lg'>
+          <Sidebar.Item href="/admin/dashboard" icon={HiChartPie} className='text-md pr-7'>
             Dashboard
           </Sidebar.Item>
           <Sidebar.Item href="/admin/dashboard/upload" icon={HiViewBoards}>
@@ -20,16 +20,16 @@ const SideBar = () => {
           <Sidebar.Item href="/admin/dashboard/manage" icon={HiInbox}>
             Manage Books
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiUser}>
+          <Sidebar.Item href="#" icon={HiUser} className="mr-12 pr-7">
             Users
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiShoppingBag}>
+          <Sidebar.Item href="#" icon={HiShoppingBag} className="mr-12">
             Products
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiArrowSmRight}>
+          <Sidebar.Item href="#" icon={HiArrowSmRight} className="mr-12 pr-5">
             Sign In
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiTable}>
+          <Sidebar.Item href="#" icon={HiTable} className="mr-12">
             Log Out
           </Sidebar.Item>
         </Sidebar.ItemGroup>
