@@ -3,17 +3,7 @@ import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 const Upload = () => {
   const navigate = useNavigate();
-  // const [UpldBook, setUpldBook] = useState(
-  //   {
-  //     BookTitle:'',
-  //     BookAuthor:'',
-  //     imageurl:'',
-  //     Description:'',
-  //     // category:'',
-  //     Booklink:''
-     
-  //   }
-  // );
+  
 
   const categories=
     ["Fiction",
@@ -35,16 +25,7 @@ const Upload = () => {
   
 const  handlesubmit = (e) => {
   e.preventDefault();
-  // const formData = new FormData();
  
-  // // formData.append('BookTitle', UpldBook.BookTitle);
-  // // formData.append('BookAuthor',UpldBook.BookAuthor);
-  // // formData.append('imageurl',UpldBook.imageurl);
-  // // formData.append('Description',UpldBook.Description);
-  // // formData.append('Booklink',UpldBook.Booklink);
-  // // formData.append('category',category);
-
-  // // console.log(formData);
  
 
    const form=e.target;
@@ -101,24 +82,7 @@ fetch('http://localhost:3000/api/books', {
 
 
 
-  // const handleChange = (e) => {
 
-  //   // setUpldBook({
-  //   //   ...UpldBook,
-  //   //   [e.target.BookTitle]: e.target.value,
-  //   //   [e.target.BookAuthor]: e.target.value,
-  //   //   [e.target.imageurl]: e.target.value,
-  //   //   [e.target.Description]: e.target.value,
-  //   //   [e.target.Booklink]: e.target.value,
-     
-  //   // });
-  //   const { name, value } = e.target;
-  //   setUpldBook({
-  //     ...UpldBook,
-  //     [name]: value,
-  //   });
-  
-  // }
    
 
 
