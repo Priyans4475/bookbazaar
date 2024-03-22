@@ -2,7 +2,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Link ,Outlet} from "react-router-dom";
 import Navbar from "./components/Navbar";
-import './App.css'
+
 
 // Define a function component that renders the app
 function App() {
