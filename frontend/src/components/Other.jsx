@@ -18,7 +18,7 @@ const Other = () => {
     },[])
   return (
     <div  className='my-16 px-4 lg:px-24'>
-        <div className='text-4xl font-bold w-full mb-5 text-blue-700 justify-center items-center flex mt-2 '>Other Books</div>
+        <div className='text-4xl font-mono w-full mb-5 text-black justify-center items-center flex mt-2 '>Trending Books</div>
      
         <div class="w-full inline-flex flex-nowrap">
         <ul class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">

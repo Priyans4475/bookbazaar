@@ -13,7 +13,7 @@ const FavBookorg = () => {
 
       <div className='md:w-1/2 space-y-6'>
            <h2 className='text-5xl font-bold my-5 md:w-3/4 leading-snug '>Find your favorite <span className='text-blue-700'> Book here</span></h2>
-           <p className='mb-10 text:lg md:w-5/6 '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos voluptatem, labore repellat expedita ratione sunt iure quidem in minima aspernatur mollitia provident, quam earum distinctio dolorum facilis nesciunt eveniet odio.</p>
+           <p className='mb-10 text:lg md:w-5/6 '>Explore a diverse range of genres, from timeless classics to contemporary bestsellers, ensuring there's something for every reader. Our user-friendly interface makes it effortless to browse and discover new titles, allowing you to quickly find your next favorite book</p>
            <div className='flex flex-col sm:flex-row justify-between gap-6 my-14 md:w-3/4'>
               <div>
                  <h3 className='font-bold text-3xl '> 800+ </h3>

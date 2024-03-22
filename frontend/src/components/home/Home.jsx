@@ -11,10 +11,12 @@ const Home = () => {
     <div className=' '>
 
       <Banner/>
-      <FavBooks/>
-      <FavBookorg/>
-      <Promobanner/>
       <Other/>
+      <FavBookorg/>
+      <FavBooks/>
+      
+      <Promobanner/>
+      
       <AuthorFt/>
       
       

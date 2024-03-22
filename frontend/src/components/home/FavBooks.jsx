@@ -17,7 +17,7 @@ const FavBooks = () => {
     },[])
   return (
     <div className='z-index:1'>
-        <div className='text-4xl font-bold mb-5 text-blue-700 justify-center items-center flex mt-2 '>International Best Sellers Books</div>
+        <div className='text-4xl font-mono w-full mb-5 text-black justify-center items-center flex mt-2'>International Best Sellers Books</div>
         
         <div class="w-full overflow-x-auto ">
   <div class="w-full inline-flex flex-nowrap">

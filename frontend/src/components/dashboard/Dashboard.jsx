@@ -3,16 +3,11 @@ import React from 'react'
 import 
 { BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, BsFillBellFill}
  from 'react-icons/bs'
- import { IoBookSharp } from "react-icons/io5";
- import { ImBooks } from "react-icons/im";
- import { BiCategory } from "react-icons/bi";
-
-
  import 
  { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } 
  from 'recharts';
 
-//  import './dashboard.css'
+import './dashboard.css';
 function Dashboard() {
 
     const data = [
@@ -62,43 +57,43 @@ function Dashboard() {
      
 
   return (
-    <div className=''>
-        <div className=''>
+    <main className='main-container w-full h-screen'>
+        <div className='main-title'>
             <h3>DASHBOARD</h3>
         </div>
 
-        <div className='flex p-20 w-full'>
-            <div className=' w-[210px] h-[150px] mr-10 rounded-lg bg-blue-500 shadow-xl'>
-                <div className='flex justify-evenly mt-4'>
-                    <h3 className='text-xl font-serif'>BOOKS</h3>
-                    <IoBookSharp className='w-10 h-8'/>
+        <div className='main-cards'>
+            <div className='card'>
+                <div className='card-inner'>
+                    <h3>BOOKS</h3>
+                    <BsFillArchiveFill className='card_icon'/>
                 </div>
-                <h1 className='m-10 text-xl font-bold'>300</h1>
+                <h1>300</h1>
             </div>
-            <div className=' w-[210px] h-[150px] mr-10 rounded-lg shadow-xl bg-orange-500'>
-                <div className='flex justify-evenly mt-4'>
-                    <h3  className='text-xl font-serif'>NEW BOOKS</h3>
-                    <ImBooks className='w-10 h-8'/>
+            <div className='card'>
+                <div className='card-inner'>
+                    <h3>NEW BOOKS</h3>
+                    <BsFillGrid3X3GapFill className='card_icon'/>
                 </div>
-                <h1 className='m-10 text-xl font-bold'>12</h1>
+                <h1>12</h1>
             </div>
-            <div className=' w-[210px] h-[150px] shadow-xl mr-10 rounded-lg bg-green-500'>
-                <div className='flex justify-evenly mt-4'>
-                    <h3  className='text-xl font-serif'>CATEGORIES</h3>
-                    <BiCategory className='w-10 h-8'/>
+            <div className='card'>
+                <div className='card-inner'>
+                    <h3>CATEGORIES</h3>
+                    <BsPeopleFill className='card_icon'/>
                 </div>
-                <h1 className='m-10 text-xl font-bold'>33</h1>
+                <h1>33</h1>
             </div>
-            <div className=' w-[210px] h-[150px] mr-10 shadow-xl rounded-lg bg-red-500 '>
-                <div className='flex justify-evenly mt-4'>
-                    <h3  className='text-xl font-serif'>AUTHORS</h3>
-                    <BsPeopleFill className='w-10 h-8'/>
+            <div className='card'>
+                <div className='card-inner'>
+                    <h3>AUTHORS</h3>
+                    <BsFillBellFill className='card_icon'/>
                 </div>
-                <h1 className='m-10 text-xl font-bold'>42</h1>
+                <h1>42</h1>
             </div>
         </div>
 
-        <div className=''>
+        <div className='charts'>
             <ResponsiveContainer width="100%" height="100%">
             <BarChart
             width={500}
@@ -141,10 +136,10 @@ function Dashboard() {
                 <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
                 <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
                 </LineChart>
-            </ResponsiveContainer> 
+            </ResponsiveContainer>
 
-        </div> 
-    </div>
+        </div>
+    </main>
   )
 }
 
