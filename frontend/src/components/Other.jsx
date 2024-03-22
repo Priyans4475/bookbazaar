@@ -17,10 +17,10 @@ const Other = () => {
         getdata();
     },[])
   return (
-    <div  className='my-16 px-4 lg:px-24'>
+    <div  className='my-16 px-4 lg:px-24 z-[-10]'>
         <div className='text-4xl font-mono w-full mb-5 text-black justify-center items-center flex mt-2 '>Trending Books</div>
      
-        <div class="w-full inline-flex flex-nowrap">
+        <div class="w-full inline-flex flex-nowrap z-[-10]">
         <ul class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
     {books.map((book, index) => (
        <li>

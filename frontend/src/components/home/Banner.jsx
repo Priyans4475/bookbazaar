@@ -1,9 +1,11 @@
 import React from 'react'
 import Bannercard from './Bannercard'
+import Navbar from '../Navbar'
 
 const Banner = () => {
   return (
     <div className='px-4 lg:px-24 bg-gray-100 flex z-0 items-center'>
+   
      <div className='w-full flex flex-col md:flex-row justify-between items-center gap-12 py-40'>
         <div className='md:w-2/3 space-y-8 h-full'> 
             <h2 className='text-black leading-snug text-5xl font-bold  h-full'>Where Every Page Holds Possibility<span className='text-blue-700'> Discover, Explore, Enjoy </span></h2>
