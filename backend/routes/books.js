@@ -2,14 +2,28 @@ const express = require('express');
 const router = express.Router();
 const { Books} = require('../db'); // Importing the Books model
 const { Author } = require('../authormodel');
+const {authmiddleware}=require('../middleware')
 
-router.post('/', async function(req, res) {
-    const data = req.body;
+router.post('/',authmiddleware, async function(req, res) {
+   
+    const data = {
+        // Your existing data properties
+        bookTitle: req.body.bookTitle,
+        authorName: req.body.authorName,
+        imageURL: req.body.imageURL,
+        category: req.body.category,
+        description: req.body.description,
+        userId: req.userId,
+
+      };
+   
+
 
     try {
         // Create a new document using the Books model
         const result = await Books.create(data);
         res.send(result);
+      
     } catch (err) {
         console.error('Error occurred:', err);
         res.status(500).send({ error: 'An error occurred while inserting data into the database.' });

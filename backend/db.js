@@ -8,12 +8,14 @@ mongoose.connect("mongodb+srv://bookbazaar:priyans4475@cluster0.fvrepdx.mongodb.
 .then(()=>{console.log('database connected successfully');})
 .catch((err)=>{console.log(err);});
 
-// const userSchema=mongoose.Schema({
-// username:String,
-// password:String,
-// firstname:String,
-// lastname:String
-// })
+const userSchema=mongoose.Schema({
+username:String,
+password:String,
+firstname:String,
+lastname:String
+})
+
+
 
 const booksSchema= new mongoose.Schema({
    
@@ -41,7 +43,12 @@ const booksSchema= new mongoose.Schema({
     bookpdfURL:{
         type:String,
         require:true
-    }
+    },
+    userId:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'User',
+        
+        },
 
 
     
@@ -70,6 +77,6 @@ const booksSchema= new mongoose.Schema({
 const Books = mongoose.model('Books', booksSchema);
 // const Author = mongoose.model('Author', authorSchema);
 
-// const User=mongoose.model("User",userSchema);
-module.exports={Books}
+const User = mongoose.model('User',userSchema);
+module.exports={Books,User}
 
