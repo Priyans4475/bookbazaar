@@ -7,9 +7,14 @@ const Manage = () => {
   const [allbooks,setallbooks]=useState([]);
   useEffect(() => {
     const getdata = async () => {
-      const data = await axios.get("http://localhost:3000/api/books/");
+      const data = await axios.get("http://localhost:3000/api/books/admin",{
+        
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token")}
+        }
+      );
       setallbooks(data.data);
-      console.log(data);
+     
     };
     getdata();
   
@@ -17,7 +22,10 @@ const Manage = () => {
   }, [])
   
 const handleDelete = (id) => {
-  axios.delete(`http://localhost:3000/api/books/${id}`)
+  axios.delete(`http://localhost:3000/api/books/${id}`,
+  {
+    
+  })
  .then(res => {
       console.log(res);
       alert('Successfully deleted book');

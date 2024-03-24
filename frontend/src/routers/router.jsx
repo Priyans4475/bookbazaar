@@ -11,6 +11,8 @@ import Upload from '../components/dashboard/Upload';
 import Manage from '../components/dashboard/Manage';
 import EditBooks from '../components/dashboard/EditBooks';
 import Register from '../admin/register';
+import Books from '../admin/Books';
+import Users from '../admin/Users';
 
 const router = createBrowserRouter([
     {
@@ -65,6 +67,15 @@ const router = createBrowserRouter([
         {
           path:'/admin/dashboard/register',
           element: <Register />
+        },
+      
+        {
+          path:'/admin/dashboard/userdetails',
+          element: <Users/>
+        },
+        {
+          path:'/admin/dashboard/books',
+          element: <Books/>
         }
       ]
     },

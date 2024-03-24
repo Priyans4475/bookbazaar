@@ -57,7 +57,12 @@ const  handlesubmit = (e) => {
 fetch('http://localhost:3000/api/books', {
   method: 'POST',
   headers: {
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+  
+      Authorization: "Bearer " + localStorage.getItem("token")
+
+  
+
   },
   body: JSON.stringify(bookobject)
 })

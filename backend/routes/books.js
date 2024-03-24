@@ -42,6 +42,20 @@ router.get('/', async function(req, res) {
         res.status(500).json({ error: 'An error occurred while retrieving data from the database.' });
     }
 });
+router.get('/admin',authmiddleware, async function(req, res) {
+    try {
+       
+        // Query all documents from the Books collection
+        const books = await Books.find({ userId: req.userId });
+        // books.forEach(book => {
+        //     console.log(book.userId); // This will log the userId associated with each book
+        // });
+        res.send(books);
+    } catch (err) {
+        console.error('Error occurred:', err);
+        res.status(500).json({ error: 'An error occurred while retrieving data from the database.' });
+    }
+});
 
 // GET endpoint to retrieve details of a specific book by its ID
 router.get('/:id', async function(req, res) {

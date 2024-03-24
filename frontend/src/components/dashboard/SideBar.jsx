@@ -20,14 +20,17 @@ const SideBar = () => {
           <Sidebar.Item href="/admin/dashboard/manage" icon={HiInbox}>
             Manage Books
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiUser} className="mr-12 pr-7">
+          <Sidebar.Item href="/admin/dashboard/userdetails" icon={HiUser} className="mr-12 pr-7">
             Users
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiShoppingBag} className="mr-12">
-            Products
+          <Sidebar.Item href="/admin/dashboard/books" icon={HiShoppingBag} className="mr-12">
+            Books
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiArrowSmRight} className="mr-12 pr-5">
-            Sign In
+          <Sidebar.Item href="/admin/dashboard/register" icon={HiArrowSmRight} className="mr-12 pr-5">
+            Sign Up
+          </Sidebar.Item>
+          <Sidebar.Item href="/" icon={HiTable} className="mr-12">
+            Home
           </Sidebar.Item>
           <Sidebar.Item href="#" icon={HiTable} className="mr-12">
             Log Out
