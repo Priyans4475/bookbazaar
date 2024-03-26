@@ -14,7 +14,7 @@ const Banner = () => {
             
             <button className='bg-teal-500 hover:bg-teal-700 rounded-lg text-white font-bold py-2 px-4  ml-20 '>Search and Explore </button>
              </div>
-        <div><Bannercard/> </div>
+        <div className='z-0'><Bannercard/> </div>
      </div>
      
     </div>
