@@ -3,7 +3,7 @@ import Blogcard from './Blogcard'
 
 const Blog = () => {
   return (
-<>
+<div >
 <Blogcard  imglink={'https://www.clankart.com/blog/wp-content/uploads/2023/01/raddiwala-360x240.jpg'}
           category={'fiction'} 
           title={'Why reselling used books is better than selling them to a scrap dealer?'} 
@@ -49,7 +49,7 @@ const Blog = () => {
 
 
 
-</>
+</div>
   )
 }
 

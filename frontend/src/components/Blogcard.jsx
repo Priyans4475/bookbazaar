@@ -3,10 +3,10 @@ import React from 'react'
 const Blogcard = (props) => {
   return (
     
-    <div className=' '>
+    <div className=''>
       
-      <article id="post-61" className="bg-white m-20 pl-20 pr-20  flex-row post-61 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
-        <div className="flex shadow-lg rounded-lg">
+      <article id="post-61" className="bg-white m-20 pl-20 pr-20  flex-row post-61 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized z-1  ">
+        <div className="flex shadow-lg rounded-lg opacity-100 z-99">
           <div className="">
           <div className="">
             <a href="https://www.clankart.com/blog/why-reselling-used-books-is-better-than-selling-them-to-a-scrap-dealer/" title="Why reselling used books is better than selling them to a scrap dealer?">
