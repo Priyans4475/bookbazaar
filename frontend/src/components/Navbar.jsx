@@ -31,7 +31,8 @@ const Navbar = () => {
   const navItems =[
     
     {link:'Home',path:'/'},
-    {link:'Shop',path:'/shop'},
+    {link:'Explore',path:'/shop'},
+    {link:'Books',path:'/authorsbooks'},
     {link:'About',path:'/about'},
     {link:'Blog',path:'/blog'},
     {link:'sell Your Book',path:'/admin/dashboard'},
@@ -39,11 +40,11 @@ const Navbar = () => {
   ]
   return (
    <header className='w-full bg-transparent fixed top-0 left-0 right-0 transition-all ease-in duration-300 z-50'>
-<nav className={`py-4 lg:px-24 px-4 ${issticky ? "sticky top-0 left-0 right-0 bg-pink-300 z-999" : "z-1"}`}>
+<nav className={`py-4 lg:px-24 px-4 ${issticky ? "sticky top-0 left-0 right-0 bg-black text-white opacity-80 z-999" : "z-1"}`}>
         <div className='flex justify-between'>
             {/* logo */}
             
-                <Link to={'/'} className='font-bold text-blue-700 text-2xl'>BookBazaar</Link>
+                <Link to={'/'} className='font-bold text-white text-2xl'>BookBazaar</Link>
                 {/* nav item for large device */}
            <ul className='space-x-10 md:flex hidden'>
             {navItems.map((item,index)=>

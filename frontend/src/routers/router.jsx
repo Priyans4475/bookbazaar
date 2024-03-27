@@ -13,6 +13,7 @@ import EditBooks from '../components/dashboard/EditBooks';
 import Register from '../admin/register';
 import Books from '../admin/Books';
 import Users from '../admin/Users';
+import Authorbooks from '../components/Authorbooks';
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
         {
             path: "/shop",
             element: <Shop />,
+          },
+          {
+            path: "/authorsbooks",
+            element: <Authorbooks />,
           },
           {
             path: "/about",
