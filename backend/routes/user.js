@@ -61,6 +61,22 @@ router.post("/signup",async(req,res,next)=>{
 });
 
 
+router.get('/count',async(req,res)=>{
+    const usercount=await User.countDocuments()
+
+    if(!usercount)
+    {
+         res.status(500).json({success:false});
+    }
+
+    res.send({
+        usercount:usercount
+    });
+})
+
+
+
+
 
 // const updateBody = zod.object({
    

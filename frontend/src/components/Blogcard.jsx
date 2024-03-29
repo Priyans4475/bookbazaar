@@ -9,9 +9,9 @@ const Blogcard = (props) => {
         <div className="flex shadow-lg rounded-lg opacity-100 z-99">
           <div className="">
           <div className="">
-            <a href="https://www.clankart.com/blog/why-reselling-used-books-is-better-than-selling-them-to-a-scrap-dealer/" title="Why reselling used books is better than selling them to a scrap dealer?">
+            <a  title="Why reselling used books is better than selling them to a scrap dealer?">
               <img className='w-[360px] h-[240px] rounded-lg shadow-lg hover:'
-               src={props.imglink} class="attachment-hestia-blog size-hestia-blog wp-post-image" alt="Why reselling used books is better than selling them to a scrap dealer?" decoding="async" fetchpriority="high" srcset="https://www.clankart.com/blog/wp-content/uploads/2023/01/raddiwala-360x240.jpg 360w, https://www.clankart.com/blog/wp-content/uploads/2023/01/raddiwala-300x200.jpg 300w, https://www.clankart.com/blog/wp-content/uploads/2023/01/raddiwala-1024x683.jpg 1024w, https://www.clankart.com/blog/wp-content/uploads/2023/01/raddiwala-768x512.jpg 768w, https://www.clankart.com/blog/wp-content/uploads/2023/01/raddiwala.jpg 1072w" sizes="(max-width: 360px) 100vw, 360px"/>
+               src={props.imglink} class="attachment-hestia-blog size-hestia-blog wp-post-image w-80 h-60 " alt="Why reselling used books is better than selling them to a scrap dealer?" decoding="async" fetchpriority="high"  sizes="(max-width: 360px) 100vw, 360px"/>
               </a>
               </div>
               </div>

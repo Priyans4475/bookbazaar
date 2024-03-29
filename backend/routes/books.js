@@ -130,6 +130,36 @@ router.get('/', async function(req, res) {
 });
 
 
+router.get('/count',async(req,res)=>{
+    const Bookscnt=await Books.countDocuments()
+
+    if(!Bookscnt)
+    {
+         res.status(500).json({success:false});
+    }
+
+    res.send({
+        Books:Bookscnt
+    });
+})
+
+router.get('/count/category',async(req,res)=>{
+    const Bookscnt=await Books.countDocuments()
+
+    if(!Bookscnt)
+    {
+         res.status(500).json({success:false});
+    }
+
+    res.send({
+        Books:Bookscnt
+    });
+})
+
+
+
+
+
 
 
 

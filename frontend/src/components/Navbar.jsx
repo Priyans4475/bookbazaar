@@ -44,12 +44,12 @@ const Navbar = () => {
         <div className='flex justify-between'>
             {/* logo */}
             
-                <Link to={'/'} className='font-bold text-white text-2xl'>BookBazaar</Link>
+                <Link to={'/'} className='font-bold text-gray-400 text-2xl hover:bg-black rounded-lg px-1 '>BookBazaar</Link>
                 {/* nav item for large device */}
            <ul className='space-x-10 md:flex hidden'>
             {navItems.map((item,index)=>
                 
-                        <Link to={item.path} className='cursor-pointer uppercase hover:text-blue-700'>{item.link}</Link>
+                        <Link to={item.path} className='cursor-pointer uppercase hover:text-white hover:bg-black rounded-lg h-6 px-1'>{item.link}</Link>
                   
                 )
             }
