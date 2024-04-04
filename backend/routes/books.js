@@ -13,6 +13,8 @@ router.post('/',authmiddleware, async function(req, res) {
         imageURL: req.body.imageURL,
         category: req.body.category,
         description: req.body.description,
+        bookpdfURL: req.body.bookpdfURL,
+
         userId: req.userId,
 
       };
@@ -130,32 +132,129 @@ router.get('/', async function(req, res) {
 });
 
 
-router.get('/count',async(req,res)=>{
-    const Bookscnt=await Books.countDocuments()
+router.get('/get/count', async (req, res) => {
+    const bookcnt=await Books.countDocuments()
 
-    if(!Bookscnt)
+    if(!bookcnt)
     {
          res.status(500).json({success:false});
     }
 
     res.send({
-        Books:Bookscnt
+        bookcount:bookcnt
     });
-})
+});
 
-router.get('/count/category',async(req,res)=>{
-    const Bookscnt=await Books.countDocuments()
+router.get('/get/category', async (req, res) => {
+    try {
+        const categoryCounts = await Books.aggregate([
+            {
+                $group: {
+                    _id: '$category',
+                    count: { $sum: 1 }
+                }
+            }
+        ]);
 
-    if(!Bookscnt)
-    {
-         res.status(500).json({success:false});
+        let totalCategories = 0;
+        if (categoryCounts && categoryCounts.length > 0) {
+            totalCategories = categoryCounts.length;
+        }
+
+        res.send({
+            totalCategories: totalCategories,
+            // categoryCounts: categoryCounts
+        });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ success: false });
     }
+});
 
-    res.send({
-        Books:Bookscnt
-    });
-})
 
+
+
+
+// router.get('/count/category',async(req,res)=>{
+//     const Bookscnt=await Books.countDocuments()
+
+//     if(!Bookscnt)
+//     {
+//          res.status(500).json({success:false});
+//     }
+
+//     res.send({
+//         Books:Bookscnt
+//     });
+// })
+
+const moment = require('moment'); // Import moment.js for date manipulation
+
+router.get('/get/countLast24hrs', async (req, res) => {
+    try {
+        // Calculate the date 24 hours ago
+        const twentyFourHoursAgo = moment().subtract(24, 'hours').toDate();
+
+        // Aggregate to count books posted in the last 24 hours
+        const booksCountLast24hrs = await Books.aggregate([
+            {
+                $match: {
+                    createdAt: { $gte: twentyFourHoursAgo }
+                }
+            },
+            {
+                $group: {
+                    _id: null,
+                    count: { $sum: 1 }
+                }
+            }
+        ]);
+
+        // Extract the count from the aggregation result
+        let totalCountLast24hrs = 0;
+        if (booksCountLast24hrs && booksCountLast24hrs.length > 0) {
+            totalCountLast24hrs = booksCountLast24hrs[0].count;
+        }
+
+        res.send({
+            totalCountLast24hrs: totalCountLast24hrs
+        });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ success: false });
+    }
+});
+
+
+router.get('/get/authorCount', async (req, res) => {
+    try {
+        const authorCount = await Books.aggregate([
+            {
+                $group: {
+                    _id: '$authorName'
+                }
+            },
+            {
+                $group: {
+                    _id: null,
+                    authorCount: { $sum: 1 }
+                }
+            }
+        ]);
+
+        let totalAuthors = 0;
+        if (authorCount && authorCount.length > 0) {
+            totalAuthors = authorCount[0].authorCount;
+        }
+
+        res.send({
+            totalAuthors: totalAuthors
+        });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ success: false });
+    }
+});
 
 
 

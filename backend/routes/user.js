@@ -32,6 +32,7 @@ router.post("/signup",async(req,res,next)=>{
         username: req.body.username
     })
 
+
     if (existingUser) {
         return res.status(411).json({
             message: "Email already taken/Incorrect inputs"
@@ -43,11 +44,7 @@ router.post("/signup",async(req,res,next)=>{
 
     const dbUser=await User.create(body);
     const userId = dbUser._id;
-    // await Account.create({
-        
-    //     userId,
-    //     balance:1+Math.random()*10000,
-    // })
+   
 
     const token=jwt.sign({
         userId:dbUser._id
@@ -61,7 +58,7 @@ router.post("/signup",async(req,res,next)=>{
 });
 
 
-router.get('/count',async(req,res)=>{
+router.get('/get/count',async(req,res)=>{
     const usercount=await User.countDocuments()
 
     if(!usercount)

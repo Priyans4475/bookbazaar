@@ -15,44 +15,53 @@ firstname:String,
 lastname:String
 })
 
+const { Schema } = mongoose;
 
 
-const booksSchema= new mongoose.Schema({
-   
-    bookTitle:{
-        type:String,
-        require:true
-
-    },
-    authorName:{
-        type:String,
-        require:true
-    },
-    imageURL:{
-        type:String,
-        require:true
-    },
-    category:{
-        type:String,
-        require:true
-    },
-    description:{
-        type:String,
-        require:true
-    },
-    bookpdfURL:{
-        type:String,
-        require:true
-    },
-    userId:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'User',
-        
-        },
 
 
-    
+const booksSchema = new mongoose.Schema({
+  
+    bookTitle: {
+        type: String,
+        required: true
+    },
+    authorName: {
+        type: String,
+        required: true
+    },
+    imageURL: {
+        type: String,
+        required: true
+    },
+    category: {
+        type: String,
+        required: true
+    },
+    description: {
+        type: String,
+        required: true
+    },
+    bookpdfURL: {
+        type: String,
+        required: true
+    },
+
+    userId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    }
+}, { timestamps: true });
+
+// Export the schema
+booksSchema.virtual('id').get(function(){
+    return this._id.toHexString();
+});
+
+booksSchema.set('toJSON',{
+    virtuals:true,
 })
+
 
 // const authorSchema= new mongoose.Schema({
     

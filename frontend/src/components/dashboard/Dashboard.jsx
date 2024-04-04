@@ -1,5 +1,6 @@
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 import 
 { BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, BsFillBellFill}
  from 'react-icons/bs'
@@ -9,6 +10,31 @@ import
 
 import './dashboard.css';
 function Dashboard() {
+  const [books,setbooks]=useState();
+  const [newbooks,setnewbooks]=useState();
+  const [category,setcategory]=useState();
+  const [authors,setauthors]=useState();
+
+  const getdata =async()=>{
+      const data1= await axios.get("http://localhost:3000/api/books/get/count");
+      setbooks(data1.data.bookcount);
+      const data2= await axios.get("http://localhost:3000/api/books/get/countLast24hrs");
+      setnewbooks(data2.data.totalCountLast24hrs);
+      const data3= await axios.get("http://localhost:3000/api/books//get/category");
+      setcategory(data3.data.totalCategories);
+      const data4= await axios.get("http://localhost:3000/api/books/get/authorCount");
+      setauthors(data4.data.totalAuthors);
+
+
+      
+  }
+      
+  
+  useEffect(() =>
+  {
+      getdata();
+  },[])         
+
 
     const data = [
         {
@@ -68,28 +94,28 @@ function Dashboard() {
                     <h3>BOOKS</h3>
                     <BsFillArchiveFill className='card_icon'/>
                 </div>
-                <h1>300</h1>
+                <h1>{books}</h1>
             </div>
             <div className='card'>
                 <div className='card-inner'>
                     <h3>NEW BOOKS</h3>
                     <BsFillGrid3X3GapFill className='card_icon'/>
                 </div>
-                <h1>12</h1>
+                <h1>{newbooks}</h1>
             </div>
             <div className='card'>
                 <div className='card-inner'>
                     <h3>CATEGORIES</h3>
                     <BsPeopleFill className='card_icon'/>
                 </div>
-                <h1>33</h1>
+                <h1>{category}</h1>
             </div>
             <div className='card'>
                 <div className='card-inner'>
                     <h3>AUTHORS</h3>
                     <BsFillBellFill className='card_icon'/>
                 </div>
-                <h1>42</h1>
+                <h1>{authors}</h1>
             </div>
         </div>
 
