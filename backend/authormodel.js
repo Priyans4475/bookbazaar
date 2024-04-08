@@ -1,6 +1,7 @@
 const mongoose=require('mongoose');
+require('dotenv').config();
 
-mongoose.connect("mongodb+srv://bookbazaar:priyans4475@cluster0.fvrepdx.mongodb.net/",
+mongoose.connect(process.env.MONGODB_SECRET ,
 {
     dbName: "bookbazaar", // Specify the name of your database here
     
