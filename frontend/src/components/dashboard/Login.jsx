@@ -11,8 +11,8 @@ const Login = () => {
   const [password,setpassword]=useState('')
   const navigate = useNavigate();
   return (
-    <div className='bg-white h-screen flex justify-center items-center '>
-    <div className='w-full  rounded-lg  shadow-lg bg-green-100 flex flex-col justify-center items-center'>
+    <div className='bg-white h-screen flex justify-center items-center  ml-80'>
+    <div className='w-[500px]  rounded-lg  shadow-lg  flex flex-col justify-center items-center'>
     <Heading label={'Sign In'}/>
     <Subheading content={'Enter your credentials to access your account'}/>
     <div className='p-5'>
@@ -29,12 +29,13 @@ const Login = () => {
     inputheader={'Password'} type={'password'} placeholder={'*******'}/>
     
     <Buttonscompo label={'Sign In'} onClick={async () => {
-  const response = await axios.post("", {
+  const response = await axios.post("http://localhost:3000/api/user/signin", {
     username,
     password
   });
   localStorage.setItem("token", response.data.token)
-  navigate("/dashboard")
+  alert('You are now signed in')
+  navigate("/admin/dashboard")
 }}/>
     </div>
     {/* <Buttondown label={'Dont have an account ?'} buttontext={'Sign Up'} to={"/signup"}/> */}

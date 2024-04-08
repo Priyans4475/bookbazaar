@@ -15,8 +15,8 @@ const Register = () => {
   const navigate = useNavigate();
   return (
 
-    <div className='bg-white h-screen flex justify-center items-center '>
-<div className='w-full  rounded-lg  shadow-lg bg-green-100 flex flex-col justify-center items-center'>
+    <div className='bg-white h-screen flex justify-center items-center ml-80'>
+<div className='w-[500px]  rounded-lg  shadow-lg  flex flex-col justify-center items-center'>
 <Heading label={'Sign Up'}/>
 <Subheading content={'Enter your information to create an account'}/>
 <div className='p-10'>
