@@ -50,7 +50,7 @@ onchange={e=>{
 }} label={'Sign Up'}/>
 </div>
 
-<Buttondown label={'Already have an account ?'} buttontext={'Sign In'} to={'/'}/>
+<Buttondown label={'Already have an account ?'} buttontext={'Sign In'} to={'signin'}/>
 </div>
 </div>
   )

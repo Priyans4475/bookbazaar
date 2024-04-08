@@ -14,6 +14,7 @@ import Register from '../admin/register';
 import Books from '../admin/Books';
 import Users from '../admin/Users';
 import Authorbooks from '../components/Authorbooks';
+import Login from '../components/dashboard/Login';
 
 const router = createBrowserRouter([
     {
@@ -73,7 +74,10 @@ const router = createBrowserRouter([
           path:'/admin/dashboard/register',
           element: <Register />
         },
-      
+        {
+           path:'/admin/dashboard/register/signin', 
+           element: <Login />
+        },
         {
           path:'/admin/dashboard/userdetails',
           element: <Users/>

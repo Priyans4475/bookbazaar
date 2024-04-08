@@ -29,6 +29,7 @@ const SideBar = () => {
           <Sidebar.Item href="/admin/dashboard/register" icon={HiArrowSmRight} className="mr-12 pr-5">
             Sign Up
           </Sidebar.Item>
+          
           <Sidebar.Item href="/" icon={HiTable} className="mr-12">
             Home
           </Sidebar.Item>
