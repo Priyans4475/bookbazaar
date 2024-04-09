@@ -16,13 +16,13 @@ function Dashboard() {
   const [authors,setauthors]=useState();
 
   const getdata =async()=>{
-      const data1= await axios.get("http://localhost:3000/api/books/get/count");
+      const data1= await axios.get("https://bookbazaar-01tn.onrender.com/api/books/get/count");
       setbooks(data1.data.bookcount);
-      const data2= await axios.get("http://localhost:3000/api/books/get/countLast24hrs");
+      const data2= await axios.get("https://bookbazaar-01tn.onrender.com/api/books/get/countLast24hrs");
       setnewbooks(data2.data.totalCountLast24hrs);
-      const data3= await axios.get("http://localhost:3000/api/books//get/category");
+      const data3= await axios.get("https://bookbazaar-01tn.onrender.com/api/books//get/category");
       setcategory(data3.data.totalCategories);
-      const data4= await axios.get("http://localhost:3000/api/books/get/authorCount");
+      const data4= await axios.get("https://bookbazaar-01tn.onrender.com/api/books/get/authorCount");
       setauthors(data4.data.totalAuthors);
 
 

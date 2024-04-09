@@ -7,7 +7,7 @@ const Manage = () => {
   const [allbooks,setallbooks]=useState([]);
   useEffect(() => {
     const getdata = async () => {
-      const data = await axios.get("http://localhost:3000/api/books/admin",{
+      const data = await axios.get("https://bookbazaar-01tn.onrender.com/api/books/admin",{
         
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token")}
@@ -22,7 +22,7 @@ const Manage = () => {
   }, [])
   
 const handleDelete = (id) => {
-  axios.delete(`http://localhost:3000/api/books/${id}`,
+  axios.delete(`https://bookbazaar-01tn.onrender.com/api/books/${id}`,
   {
     
   })
@@ -72,48 +72,7 @@ const handleDelete = (id) => {
             </Table.Row>
           </Table.Body>)
         }
-        {/* <Table.Body className="divide-y">
-          <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-          <Table.Cell>1</Table.Cell>
-            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-              {'Apple MacBook Pro 17"'}
-            </Table.Cell>
-            <Table.Cell>Sliver</Table.Cell>
-            <Table.Cell>Laptop</Table.Cell>
-            <Table.Cell>$2999</Table.Cell>
-            <Table.Cell>
-              <a href="#" className="font-medium text-cyan-600 hover:underline dark:text-cyan-500">
-                Edit
-              </a>
-            </Table.Cell>
-          </Table.Row>
-          <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-700">
-          <Table.Cell>2</Table.Cell>
-            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-              Microsoft Surface Pro
-            </Table.Cell>
-            <Table.Cell>White</Table.Cell>
-            <Table.Cell>Laptop PC</Table.Cell>
-            <Table.Cell>$1999</Table.Cell>
-            <Table.Cell>
-              <a href="#" className="font-medium text-cyan-600 hover:underline dark:text-cyan-500">
-                Edit
-              </a>
-            </Table.Cell>
-          </Table.Row>
-          <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-          <Table.Cell>3</Table.Cell>
-            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">Magic Mouse 2</Table.Cell>
-            <Table.Cell>Black</Table.Cell>
-            <Table.Cell>Accessories</Table.Cell>
-            <Table.Cell>$99</Table.Cell>
-            <Table.Cell>
-              <a href="#" className="font-medium text-cyan-600 hover:underline dark:text-cyan-500">
-                Edit
-              </a>
-            </Table.Cell>
-          </Table.Row>
-        </Table.Body> */}
+        
       </Table>
        {/* Table  */}
 

@@ -6,7 +6,7 @@ const AuthorFt = () => {
  
       const [author,setauthor]=useState([]);
     const getdata =async()=>{
-        const data= await axios.get("http://localhost:3000/api/getauthor");
+        const data= await axios.get("https://bookbazaar-01tn.onrender.com/api/getauthor");
         setauthor(data.data);
         console.log(data);
     }

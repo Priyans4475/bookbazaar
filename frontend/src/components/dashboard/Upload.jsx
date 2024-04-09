@@ -54,7 +54,7 @@ const  handlesubmit = (e) => {
 // .catch(err => {
 //     consol
 
-fetch('http://localhost:3000/api/books', {
+fetch('https://bookbazaar-01tn.onrender.com/api/books', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',

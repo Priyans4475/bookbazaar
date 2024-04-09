@@ -4,29 +4,7 @@ const Shop = () => {
       const [books,setbooks]=useState([]);
       const [search,setsearch]=useState("javacript");
       const [fill,setfill]=useState(false)
-      // const getdata =async()=>{
-         
-      //   const data= await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${search}&key=AIzaSyCubntZWq9UFRa1N7--zPRLqf7hOWubqH4`);
-          
-      //   // Passing the title to the setbooks function
-      //   console.log(data.data.items)
-      //   setbooks(data.data.items);
-        
-      //   // console.log(books)
-
-      //     // async function fetchData() {
-      //       // try {
-      //       //     const response = await fetch('');
-      //       //     const data = await response.json();
-      //       //     // Access your data here and call the function
-      //       //     setbooks(data.data);
-      //       //     console.log(data.data);
-      //       // } catch (error) {
-      //       //     console.error('Error fetching data:', error);
-      //       // }
-        
-          
-      // }
+     
       async function  handlesubmit(e){
         setfill(true)
         e.preventDefault();
@@ -43,10 +21,7 @@ const Shop = () => {
    
      
     }
-    // useEffect(() =>
-    // {
-    //   handlesubmit();
-    // },[])
+   
      
   return (
     <div>
@@ -70,12 +45,7 @@ const Shop = () => {
         <div className='grid md:grid-cols-4 sm:grid-cols-2  px-4 md:px-24'>
           {
           books.map(book =>(
-//             <div>
-// <img className='ml-10' src={book.volumeInfo.imageLinks.thumbnail}/>
-//           <div>
-//           {book.volumeInfo.authors}
-//             </div>
-//               </div>
+
 
 <>
 

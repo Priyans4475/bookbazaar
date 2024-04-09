@@ -39,7 +39,7 @@ onchange={e=>{
 
 <Buttonscompo 
  onClick={async () => {
-  const response = await axios.post("http://localhost:3000/api/user/signup", {
+  const response = await axios.post("https://bookbazaar-01tn.onrender.com/api/user/signup", {
     username,
     firstname,
     lastname,

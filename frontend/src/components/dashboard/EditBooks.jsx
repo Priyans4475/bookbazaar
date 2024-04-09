@@ -57,7 +57,7 @@ e.preventDefault();
 // .catch(err => {
 //     consol
 
-fetch(`http://localhost:3000/api/books/${id}`, {
+fetch(`https://bookbazaar-01tn.onrender.com/api/books/${id}`, {
 method: 'PUT',
 headers: {
   'Content-Type': 'application/json'

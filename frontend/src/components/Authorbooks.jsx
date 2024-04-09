@@ -6,7 +6,7 @@ import Favcard from './Favcard';
 const Authorbooks = () => {
   const [books,setbooks]=useState([]);
   const getdata =async()=>{
-      const data= await axios.get("http://localhost:3000/api/books/");
+      const data= await axios.get("https://bookbazaar-01tn.onrender.com/api/books/");
       setbooks(data.data);
       
   }

@@ -14,12 +14,7 @@ const Favcard = ({book}) => {
 <div class="max-w-sm w-[250px] h-[420px]  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
    
     <img class="rounded-t-lg w-[250px] h-[300px] relative" src={book.imageURL} alt="" />
-    {/* <div className='absolute top-3 right-1 p-2 rounded '>
-    <FaCartShopping  className='h-8 w-8 text-white rounded-lg bg-black'/>
-    <FaEye className='h-8 w-8 bg-gray-200 rounded-full '/>
-
-
-    </div>   */}
+   
    
     <div class=" h-[120px] text-center bg-white rounded-lg mt-2">
        
