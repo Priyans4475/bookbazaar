@@ -15,38 +15,38 @@
   }
   
   .swiper-slide:nth-child(1n) {
-   background-image: url('src/assets/banner-books/book7.png');
+   background-image: url('https://www1.alibris-static.com/as-a-man-thinketh-and-from-poverty-to-power/isbn/9781523643394_l.jpg');
   }
   
   .swiper-slide:nth-child(2n) {
-    background-image: url('src/assets/banner-books/book1.png');
+    background-image: url('https://d3myrwj42s63no.cloudfront.net/300/978/052/595/218/3/9780525952183.jpg');
   }
   
   .swiper-slide:nth-child(3n) {
-    background-image: url('src/assets/banner-books/book7.png');
+    background-image: url('https://blackwells.co.uk/jacket/l/9780752889764.jpg');
   }
   
   .swiper-slide:nth-child(4n) {
-    background-image: url('src/assets/banner-books/book1.png');
+    background-image: url('https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1344605459i/13185621.jpg');
   }
   
   .swiper-slide:nth-child(5n) {
-    background-image: url('src/assets/banner-books/book4.png');
+    background-image: url('https://th.bing.com/th/id/OIP.9loZwKU51LiMfoWu8A0BsQAAAA?w=295&h=450&rs=1&pid=ImgDetMain');
   }
   
   .swiper-slide:nth-child(6n) {
-    background-image: url('src/assets/banner-books/book1.png');
+    background-image: url('https://fiction-atlas.com/wp-content/uploads/2020/03/89777977_10163176968200319_3312862889932488704_o-300x462.jpg');
   }
   
   .swiper-slide:nth-child(7n) {
-    background-image: url('src/assets/banner-books/book4.png');
+    background-image: url('https://i2.wp.com/candidcover.net/wp-content/uploads/The-Royal-Order-of-Fighting-Dragons.jpg?fit=200%2C300&ssl=1');
   }
   
   .swiper-slide:nth-child(8n) {
-    background-image: url('src/assets/banner-books/book3.png');
+    background-image: url('https://th.bing.com/th/id/R.e85b0174d90b824785f4b868bcc67dca?rik=1wpi9FnWjIkkEw&riu=http%3a%2f%2fprodimage.images-bn.com%2fpimages%2f9780451463630_p0_v1_s1200x630.jpg&ehk=aAWgVRo04mD1bhpPahM6Yr3JGRddoq6OJZF7UfwWjIE%3d&risl=&pid=ImgRaw&r=0');
   }
   
   .swiper-slide:nth-child(9n) {
-    background-image: url('src/assets/banner-books/book2.png');
+    background-image: url('https://m.media-amazon.com/images/I/51MnravM4wL._SL442_.jpg');
   }
   
