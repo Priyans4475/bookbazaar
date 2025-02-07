@@ -13,7 +13,7 @@ const Banner = () => {
             
             
             {/* <Link to='/shop'><button className='bg-teal-500 hover:bg-teal-700 rounded-lg text-white font-bold py-2 px-4  ml-20 '>Search and Explore </button></Link> */}
-            <Link to='/shop'><button className='bg-blue-700 text-white font-semibold px-5 py-2 mt-5 rounded transition-all hover:bg-black'>Search and Explore</button> </Link>
+            <Link to='/shop'><button className='bg-blue-700 text-white font-semibold px-5 py-2 mt-5 rounded transition-all hover:bg-black'>Search & Explore</button> </Link>
              </div>
         <div className='z-0'><Bannercard/> </div>
      </div>
