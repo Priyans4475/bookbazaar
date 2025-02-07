@@ -12,7 +12,7 @@ const Banner = () => {
             <p className='md:w-4/5 font-serif'>Welcome to our literary haven where every page holds the promise of possibility. Embark on a journey through the vast realms of imagination, where stories become more than just words on paper—they become portals to new worlds, experiences, and emotions.</p>
             
             
-            <button className='bg-teal-500 hover:bg-teal-700 rounded-lg text-white font-bold py-2 px-4  ml-20 '>Search and Explore </button>
+            <Link to='/shop'><button className='bg-teal-500 hover:bg-teal-700 rounded-lg text-white font-bold py-2 px-4  ml-20 '>Search and Explore </button></Link>
              </div>
         <div className='z-0'><Bannercard/> </div>
      </div>
